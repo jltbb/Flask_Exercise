@@ -12,7 +12,7 @@ global studentOrganisationDetails
 def index():
     # Complete this function to get current date and time assign this value to currentDate, display this data on index.html
 
-    return render_template('index.html', currentDate=currentDate)
+    return render_template('index.html', currentDate=datetime.datetime.now())
 
 
 @app.get('/calculate')
