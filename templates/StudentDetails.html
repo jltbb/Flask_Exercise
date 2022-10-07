@@ -1,11 +1,29 @@
 {% block content %}
-<h1>Student Details</h1>
-<table>
-    {%for key,value in studentOrganisationDetails.items()%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Details</h1>
+    <table style='text-align: center;width:50%;'>
         <tr>
-            <td>{{key}} : {{value}}</td>
+            <th>Name</th>
+            <th>Organisation</th>
         </tr>
-    {%endfor%}
-</table>
+        
+        {%for key,value in studentOrganisationDetails.items()%}
+            <tr>
+                <td style="text-align: center;">{{key}}</td>
+                <td style="text-align: center;">{{value}}</td>
+            </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
+
 
 {% endblock %}
