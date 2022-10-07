@@ -6,7 +6,7 @@ import datetime
 app = Flask(__name__)
 global studentOrganisationDetails
 # Assign default 5 values to studentOrganisationDetails for Application  3.
-
+studentOrganisationDetails = {'Josh': 'Charlotte Hack', 'Khanna': 'Women Who Code', 'Devon': 'Code 9', 'Josh': 'Charlotte Hack', 'Emily': 'Runtime Terror'}
 
 @app.get('/')
 def index():
@@ -51,14 +51,17 @@ def checkNumber():
 @app.get('/addStudentOrganisation')
 def displayStudentForm():
     # Complete this function to display studentFrom.html page
-    pass
+    return render_template('studentForm.html')
 
 
 @app.route('/addStudentOrganisation', methods=['POST'])
 def displayRegistrationPage():
     # Get student name and organisation from form.
     studentName = request.form['name']
+    org = request.form['org']
 
     # Append this value to studentOrganisationDetails
+    studentOrganisationDetails[studentName] = org
 
     # Display studentDetails.html with all students and organisations
+    return render_template('studentDetails.html', studentOrganisationDetails=studentOrganisationDetails)

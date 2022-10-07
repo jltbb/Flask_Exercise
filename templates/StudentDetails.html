@@ -2,7 +2,9 @@
 <h1>Student Details</h1>
 <table>
     {%for key,value in studentOrganisationDetails.items()%}
-
+        <tr>
+            <td>{{key}} : {{value}}</td>
+        </tr>
     {%endfor%}
 </table>
 
